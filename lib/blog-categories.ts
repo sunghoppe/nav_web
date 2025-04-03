@@ -1,0 +1,17 @@
+export const blogCategories = [
+  { name: "All", slug: "all" },
+  { name: "Development", slug: "development" },
+  { name: "Design", slug: "design" },
+  { name: "Business", slug: "business" },
+  { name: "Accessibility", slug: "accessibility" },
+  { name: "Performance", slug: "performance" },
+  { name: "Blockchain", slug: "blockchain" },
+  { name: "AI", slug: "ai" },
+  { name: "DevOps", slug: "devops" },
+  { name: "Mobile", slug: "mobile" },
+  { name: "Career", slug: "career" },
+  { name: "Security", slug: "security" },
+  { name: "Frontend", slug: "frontend" },
+  { name: "Backend", slug: "backend" },
+  { name: "Database", slug: "database" },
+]
