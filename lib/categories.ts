@@ -1,4 +1,4 @@
-export type Language = "en" | "zh"
+export type Language = 'en' | 'zh'
 
 export const translations = {
   en: {
@@ -10,7 +10,7 @@ export const translations = {
     resources: "Resources",
     github: "GitHub",
     signIn: "Sign in",
-
+    
     // Products page
     productsTitle: "Products",
     productsDescription: "Explore the best products to help you ship next application faster and better",
@@ -19,7 +19,7 @@ export const translations = {
     more: "More",
     subcategories: "Subcategories",
     all: "All",
-
+    
     // Main Categories
     new: "New",
     featured: "Featured",
@@ -37,20 +37,7 @@ export const translations = {
     monetization: "Monetization",
     learning: "Learning",
     community: "Community",
-
-    // Tags
-    nextjs: "Next.js",
-    astro: "Astro",
-    nuxt: "Nuxt",
-    remix: "Remix",
-    svelte: "Svelte",
-    "landing-page": "Landing Page",
-    "browser-extension": "Browser Extension",
-    documentation: "Documentation",
-    blog: "Blog",
-    ecommerce: "E-commerce",
-    dashboard: "Dashboard",
-
+    
     // Sub Categories
     imageTools: "Image Tools",
     videoTools: "Video Tools",
@@ -73,19 +60,17 @@ export const translations = {
     ecommerce: "E-commerce",
     blog: "Blog",
     portfolio: "Portfolio",
-
+    
     // Product badges
     freeLabel: "Free",
     openSourceLabel: "OpenSource",
     newLabel: "New",
-
+    
     // Blog page
     blogTitle: "Blog",
     blogDescription: "Insights, tutorials, and news for indie developers and creators",
     backToBlog: "Back to Blog",
-    loadMore: "Load More",
-    submitPost: "Submit Post",
-
+    
     // Footer
     footerDescription: "Indie Dev Hub - Explore the best products to help you ship next application faster and better",
     aboutSite: "About Site",
@@ -104,7 +89,7 @@ export const translations = {
     resources: "资源",
     github: "GitHub",
     signIn: "登录",
-
+    
     // 产品页面
     productsTitle: "产品",
     productsDescription: "探索最佳产品，帮助您更快更好地开发应用",
@@ -113,7 +98,7 @@ export const translations = {
     more: "更多",
     subcategories: "子分类",
     all: "全部",
-
+    
     // 主分类
     new: "最新",
     featured: "精选",
@@ -131,20 +116,7 @@ export const translations = {
     monetization: "变现",
     learning: "学习",
     community: "社区",
-
-    // 标签
-    nextjs: "Next.js",
-    astro: "Astro",
-    nuxt: "Nuxt",
-    remix: "Remix",
-    svelte: "Svelte",
-    "landing-page": "着陆页",
-    "browser-extension": "浏览器扩展",
-    documentation: "文档",
-    blog: "博客",
-    ecommerce: "电子商务",
-    dashboard: "仪表板",
-
+    
     // 子分类
     imageTools: "图像工具",
     videoTools: "视频工具",
@@ -167,19 +139,17 @@ export const translations = {
     ecommerce: "电子商务",
     blog: "博客",
     portfolio: "作品集",
-
+    
     // 产品标签
     freeLabel: "免费",
     openSourceLabel: "开源",
     newLabel: "新品",
-
+    
     // 博客页面
     blogTitle: "博客",
     blogDescription: "为独立开发者和创作者提供的见解、教程和新闻",
     backToBlog: "返回博客",
-    loadMore: "加载更多",
-    submitPost: "提交文章",
-
+    
     // 页脚
     footerDescription: "独立开发者中心 - 探索最佳产品，帮助您更快更好地开发应用",
     aboutSite: "关于网站",
@@ -188,21 +158,17 @@ export const translations = {
     features: "功能",
     links: "链接",
     copyright: "© {year} 独立开发者中心。保留所有权利。",
-  },
+  }
 } as const
 
-export function getTranslation(
-  lang: Language,
-  key: keyof typeof translations.en,
-  params?: Record<string, string | number>,
-): string {
-  let text = translations[lang][key] || translations.en[key] || key
-
+export function getTranslation(lang: Language, key: keyof typeof translations.en, params?: Record<string, string | number>): string {
+  let text = translations[lang][key] || translations.en[key] || key;
+  
   if (params) {
     Object.entries(params).forEach(([param, value]) => {
-      text = text.replace(`{${param}}`, String(value))
-    })
+      text = text.replace(`{${param}}`, String(value));
+    });
   }
-
-  return text
+  
+  return text;
 }
