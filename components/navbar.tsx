@@ -19,9 +19,6 @@ export default function Navbar() {
     { name: t("products"), href: "/" },
     { name: t("blog"), href: "/blog" },
     { name: t("about"), href: "/about" },
-    { name: t("community"), href: "/community" },
-    { name: t("resources"), href: "/resources" },
-    { name: t("github"), href: "https://github.com" },
   ]
 
   return (
@@ -33,13 +30,13 @@ export default function Navbar() {
           </Link>
         </div>
 
-        <nav className="hidden md:flex items-center gap-6">
+        <nav className="hidden md:flex items-center gap-8">
           {navItems.map((item) => (
             <Link
               key={item.href}
               href={item.href}
               className={cn(
-                "text-sm font-medium transition-colors hover:text-primary",
+                "text-base font-medium transition-colors hover:text-primary", // Changed from text-sm to text-base
                 pathname === item.href ? "text-foreground" : "text-muted-foreground",
               )}
             >
@@ -81,10 +78,6 @@ export default function Navbar() {
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
-
-          <Button variant="default" className="bg-purple-600 hover:bg-purple-700">
-            {t("signIn")}
-          </Button>
         </div>
       </div>
     </header>
